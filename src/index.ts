@@ -5,10 +5,12 @@ class ApiIntercambiador {
     APP_URL_SANDBOX = "sandbox.apiplataforma.online";
     APP_URL_PRO = "intercam.apiplataforma.online";
     token = '';
+    source_token = '';
     url = 'http://localhost:3000';
 
-    constructor(token, sandbox = null){
+    constructor(token, source_token, sandbox = null){
         this.token = token;
+        this.source_token = source_token;
         if(sandbox){
             this.url = this.APP_URL_SANDBOX;
         } else {
@@ -23,7 +25,8 @@ class ApiIntercambiador {
             'url': this.url+'/api-intercambiador',
             headers: {
                 'Content-Type': 'application/json',
-                'x-access-token': this.token
+                'x-access-token': this.token,
+                'source-token': this.source_token
             }
         }
 
@@ -41,10 +44,11 @@ class ApiIntercambiador {
         var request = require('request');
         var options = {
           'method': 'POST',
-          'url': this.url+'/properties',
+          'url': this.url+'/api-intercambiador',
           'headers': {
             'Content-Type': 'application/json',
-            'x-access-token': this.token
+            'x-access-token': this.token,
+            'source-token': this.source_token
           },
           body: JSON.stringify(array_data)
         
@@ -63,10 +67,11 @@ class ApiIntercambiador {
         var request = require('request');
         var options = {
           'method': 'PUT',
-          'url': this.url+'/properties',
+          'url': this.url+'/api-intercambiador',
           'headers': {
             'Content-Type': 'application/json',
-            'x-access-token': this.token
+            'x-access-token': this.token,
+            'source-token': this.source_token
           },
           body: JSON.stringify(array_data)
         
@@ -85,10 +90,11 @@ class ApiIntercambiador {
         var request = require('request');
         var options = {
           'method': 'DELETE',
-          'url': this.url+'/properties',
+          'url': this.url+'/api-intercambiador',
           'headers': {
             'Content-Type': 'application/json',
-            'x-access-token': this.token
+            'x-access-token': this.token,
+            'source-token': this.source_token
           },
           body: JSON.stringify(array_data)
         

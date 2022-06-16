@@ -1,13 +1,15 @@
 "use strict";
 exports.__esModule = true;
 var ApiIntercambiador = /** @class */ (function () {
-    function ApiIntercambiador(token, sandbox) {
+    function ApiIntercambiador(token, source_token, sandbox) {
         if (sandbox === void 0) { sandbox = null; }
         this.APP_URL_SANDBOX = "sandbox.apiplataforma.online";
         this.APP_URL_PRO = "intercam.apiplataforma.online";
         this.token = '';
+        this.source_token = '';
         this.url = 'http://localhost:3000';
         this.token = token;
+        this.source_token = source_token;
         if (sandbox) {
             this.url = this.APP_URL_SANDBOX;
         }
@@ -23,7 +25,8 @@ var ApiIntercambiador = /** @class */ (function () {
             'url': this.url + '/api-intercambiador',
             headers: {
                 'Content-Type': 'application/json',
-                'x-access-token': this.token
+                'x-access-token': this.token,
+                'source-token': this.source_token
             }
         };
         return new Promise(function (resolve) {
@@ -40,10 +43,11 @@ var ApiIntercambiador = /** @class */ (function () {
         var request = require('request');
         var options = {
             'method': 'POST',
-            'url': this.url + '/properties',
+            'url': this.url + '/api-intercambiador',
             'headers': {
                 'Content-Type': 'application/json',
-                'x-access-token': this.token
+                'x-access-token': this.token,
+                'source-token': this.source_token
             },
             body: JSON.stringify(array_data)
         };
@@ -61,10 +65,11 @@ var ApiIntercambiador = /** @class */ (function () {
         var request = require('request');
         var options = {
             'method': 'PUT',
-            'url': this.url + '/properties',
+            'url': this.url + '/api-intercambiador',
             'headers': {
                 'Content-Type': 'application/json',
-                'x-access-token': this.token
+                'x-access-token': this.token,
+                'source-token': this.source_token
             },
             body: JSON.stringify(array_data)
         };
@@ -82,10 +87,11 @@ var ApiIntercambiador = /** @class */ (function () {
         var request = require('request');
         var options = {
             'method': 'DELETE',
-            'url': this.url + '/properties',
+            'url': this.url + '/api-intercambiador',
             'headers': {
                 'Content-Type': 'application/json',
-                'x-access-token': this.token
+                'x-access-token': this.token,
+                'source-token': this.source_token
             },
             body: JSON.stringify(array_data)
         };
