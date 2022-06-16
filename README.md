@@ -9,7 +9,7 @@ npm i intercambiador-api-integrate-nodejs
 ```
 const { default: ApiIntercambiador } = require("intercambiador-api-integrate-nodejs/src");
 
-const api = new ApiIntercambiador({token}, {mode ('sandbox' | '')});
+const api = new ApiIntercambiador({token}, {token_source}, {mode ('sandbox' | '')});
 ```
 
 # GET 
