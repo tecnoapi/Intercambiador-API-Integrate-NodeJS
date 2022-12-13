@@ -4,7 +4,7 @@ var ApiIntercambiador = /** @class */ (function () {
     function ApiIntercambiador(token, source_token, sandbox) {
         if (sandbox === void 0) { sandbox = null; }
         this.APP_URL_SANDBOX = "sandbox.apiplataforma.online";
-        this.APP_URL_PRO = "intercam.apiplataforma.online";
+        this.APP_URL_PRO = "apiplataforma.online";
         this.token = '';
         this.source_token = '';
         this.url = 'http://localhost:3000';

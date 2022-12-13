@@ -3,7 +3,7 @@
 class ApiIntercambiador {
 
     APP_URL_SANDBOX = "sandbox.apiplataforma.online";
-    APP_URL_PRO = "intercam.apiplataforma.online";
+    APP_URL_PRO = "apiplataforma.online";
     token = '';
     source_token = '';
     url = 'http://localhost:3000';

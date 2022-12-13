@@ -1,6 +1,6 @@
 {
   "name": "intercambiador-api-integrate-nodejs",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "",
   "main": "dist-node/index.js",
   "browser": "dist-browser/index.js",
